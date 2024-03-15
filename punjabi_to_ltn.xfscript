@@ -1,0 +1,174 @@
+
+! Script for latin to syll for Gurmukhi script, 
+! or more general, for Punjabi
+
+define Decapitalisation [ A -> a , 
+                          B -> b ,
+                          C -> c ,
+                          D -> d ,
+                          E -> e ,
+                          F -> f ,
+                          G -> g ,
+                          H -> h ,
+                          I -> i ,
+                          J -> j ,
+                          K -> k ,
+                          L -> l ,
+                          M -> m ,
+                          N -> n ,
+                          O -> o ,
+                          P -> p ,
+                          Q -> q ,
+                          R -> r ,
+                          S -> s ,
+                          T -> t ,
+                          U -> u ,
+                          V -> v ,
+                          W -> w ,
+                          X -> x ,
+                          Y -> y ,
+                          Z -> z ]
+                          ;
+
+define LengthSymbol [ ā -> â ,  
+                      ē -> ê ,  
+                      ī -> î ,  
+                      ō -> ô ,
+                      Ā -> â ,
+                      Ē -> ê ,
+                      Ī -> î ,
+                      Ō -> ô ,
+                      e -> ê ]
+                      ;
+
+! special symbol rules rules 
+
+define bindiRule [ ṃ ] -> ◌ਂ ;
+define tippiRule [ m̆  ] -> ◌ੰ ;
+define doubeRule  -> ◌ੱ ;                 !doubles the following consonant
+
+
+
+! 3-letter symbols
+
+define bhaRule [ b h a ] -> ਭ  ;  
+define chaRule [ c h a ] -> ਛ  ;  
+define dhaRule [ d h a ] -> ਧ  ; 
+define ḍhaRule [ ḍ h a ] -> ਧ  ;   
+define jhaRule [ j h a ] -> ਝ  ;   
+define ghaRule [ g h a ] -> ਗ਼  ;   
+define khaRule [ k h a ] -> ਖ  ;      
+define phaRule [ p h a ] -> ਫ   ;   
+define ṭhaRule [ ṭ h a ] -> ਠ   ; 
+define shaRule [ s h a ] -> ਸ਼   ; 
+
+
+
+! Without v x q
+! two-letter symbols
+
+define aiRule [ a i ] -> ਐ  ;  
+define auRule [ a u ] -> ਔ  ;  
+
+define baRule [ b a ] -> ਬ  ;  
+define caRule [ c a ] -> ਚ  ;  
+define daRule [ d a ] -> ਦ  ;  
+define ḍaRule [ ḍ a ] -> ਡ  ;
+define faRule [ f a ] -> ਫ਼  ;  
+define gaRule [ g a ] -> ਗ  ;  
+define haRule [ h a ] -> ਹ  ; 
+define jaRule [ j a ] -> ਜ  ; 
+define kaRule [ k a ] -> ਕ  ; 
+define laRule [ l a ] -> ਲ   ; 
+define ḷaRule [ ḷ a ] -> ਲੵ  ; 
+define maRule [ m a ] -> ਮ  ; 
+define naRule [ n a ] -> ਨ  ; 
+define ñaRule [ ñ a ] -> ਞ  ; 
+define paRule [ p a ] -> ਪ  ; 
+define raRule [ r a ] -> ਰ  ; 
+define ṛaRule [ ṛ a ] -> ੜ  ; 
+define saRule [ s a ] -> ਸ  ; 
+define taRule [ t a ] -> ਤ   ; 
+define waRule [ w a ] -> ਵ  ; 
+define yaRule [ y a ] -> ਯ  ; 
+define zaRule [ z a ] -> ਜ਼   ; 
+
+! one-letter symbols
+
+define aRule [ a ] -> ਅ      ;  
+define iRule [ i ] -> ਇ     ;  
+define oRule [ o ] -> ਓ  ;  
+define uRule [ u ] -> ਉ  ; 
+define eRule [ e ] -> ਏ  ; 
+define âRule [ â ] -> ਆ  ;  
+define îRule [ î ] -> ਈ  ;  
+define ūRule [ ū  ] -> ਊ  ;  
+   
+  
+
+define spaceRule [ % ] -> [ %  %  %  ]; 
+define hyphenRule [ %- ] -> [ %  ]; # standard space for hyphen alternative as more convenient input.
+
+define FullStopRule [ %. ] -> "|" ;
+ 
+read regex [ Decapitalisation
+.o. LengthSymbol
+
+.o. bindiRule 
+.o. tippiRule 
+!.o. doubeRule 
+
+.o. chaRule
+.o. dhaRule
+.o. ḍhaRule
+.o. ghaRule
+.o. jhaRule
+.o. ghaRule
+.o. khaRule
+.o. phaRule
+.o. ṭhaRule
+.o. shaRule
+
+.o. aiRule
+.o. auRule
+.o. baRule
+.o. caRule
+.o. daRule
+.o. faRule
+.o. gaRule
+
+.o. haRule
+.o. jaRule
+.o. kaRule
+.o. laRule
+.o. naRule
+.o. ñaRule
+.o. paRule
+
+.o. raRule
+.o. saRule
+.o. taRule
+.o. waRule
+.o. yaRule
+.o. zaRule
+
+.o. aRule
+.o. iRule
+.o. oRule
+.o. uRule
+.o. eRule
+.o. âRule
+.o. îRule
+.o. ūRule
+
+
+.o. spaceRule
+.o. hyphenRule 
+
+.o. FullStopRule ] ; 
+
+define rules;
+load stack punjabi_analyser.fst
+define Analyser;
+read regex [Analyser.o.rules];
+save stack punjabi_script_analyser.fst

@@ -1,0 +1,459 @@
+! Simple Gurmukhi(Punjabi) inflectional morphological model
+
+Multichar_Symbols
+! Word-classes
++N
++V
++Adj
++Adv
++Pron
++Postp
++Conj
++Punct
+
+! Common/Proper noun inflection
++Sg
++Pl
++Masc
++Fem
++Dir
++Obl
++Voc
++Abl
++Loc
++Poss
++Prop
++Ext
++UnExt
+
+! Verb inflection
++Inf
++Imp
++Pres
++Cop
++Past
++PresCont !Present continous
++Pcp1
++Pcp2
++1Sg
++2Sg
++3Sg
++Non3Sg
+! Special verb classes
++Aux
+
+! Pronoun features
++Art
++Dem
++Prox
++Dir
++Erg
++Dat
++Abl
++Gen
++3Pl
+
+
+! Adverb features
++Interr
+
+! Special features
++Neg
+
+! Beginning of Punjabi morphology
+
+LEXICON Root
+NounStems ;
+VerbStems ;
+AdjectiveStems ;
+AdverbStems ;
+Pronouns ;
+Postpositions ;
+Conjunctions ;
+Punctuation ;
+ProperNameStems ;
+
+!Punjabi nouns distinguishes two genders, two numbers, and five cases of direct, oblique, vocative, ablative, and locative/instrumental.
+LEXICON NounStems
+RegularNouns ;
+
+LEXICON RegularNouns
+devkahāṇī ExtendedNounSuffixes ;
+gāḷ ExtendedNounSuffixes ;
+gallā̃ ExtendedNounSuffixes ;
+grauh ExtendedNounSuffixes ;
+khojh ExtendedNounSuffixes ;
+khojhā ExtendedNounSuffixes ;
+kraupā̃ ExtendedNounSuffixes ;
+mār ExtendedNounSuffixes ;
+jangḷa ExtendedNounSuffixes ;
+parikahāṇīiā̃ ExtendedNounSuffixes ;
+pihlī ExtendedNounSuffixes ;
+samaā ExtendedNounSuffixes ;
+sabh ExtendedNounSuffixes ;
+tājrbē ExtendedNounSuffixes ;
+vēlē ExtendedNounSuffixes ;
+ādiwāsī UnExtendedNounSuffixes ; 
+bāsā UnExtendedNounSuffixes ; 
+kahaāṇaī UnExtendedNounSuffixes ; 
+kītē UnExtendedNounSuffixes ; 
+gap UnExtendedNounSuffixes ; 
+laai UnExtendedNounSuffixes ; 
+mnukh UnExtendedNounSuffixes ;
+purāṇā UnExtendedNounSuffixes ;
+wadaā UnExtendedNounSuffixes ; 
+puraṇa UnExtendedNounSuffixes ; 
+vele UnExtendedNounSuffixes ;
+vḍevḍeriā̃ UnExtendedNounSuffixes ; 
+yug UnExtendedNounSuffixes ; 
+
+LEXICON ExtendedNounSuffixes
++N+Masc+Sg+Dir+Ext:%>ā # ;
++N+Masc+Sg+Obl+Ext:%>e # ;
++N+Masc+Sg+Voc+Ext:%>ā # ;
++N+Masc+Sg+Abl+Ext:%>iȭ # ;
++N+Masc+Sg+Loc+Ext:%>e # ;
++N+Masc+Pl+Dir+Ext:%>e # ;
++N+Masc+Pl+Obl+Ext:%>iā̃ # ;
++N+Masc+Pl+Voc+Ext:%>iō # ;
++N+Fem+Sg+Dir+Ext:%>ī # ;
++N+Fem+Sg+Obl+Ext:%>ī # ;
++N+Fem+Sg+Loc+Ext:%>īē # ;
++N+Fem+Pl+Loc+Ext:%>īā̃ # ;
++N+Fem+Pl+Loc+Ext:%>īō # ;
+
+LEXICON UnExtendedNounSuffixes
++N+Masc+Sg+Voc+UnExt:%>ā # ;
++N+Masc+Sg+Abl+UnExt:%>ȭ # ;
++N+Masc+Sg+Loc+UnExt:%>ē # ;
++N+Masc+Pl+Obl+UnExt:%>ā̃ # ;
++N+Masc+Pl+Voc+UnExt:%>ō # ;
++N+Masc+Pl+Loc+UnExt:%>ī̃ # ;
++N+Fem+Sg+Voc+UnExt:%>ē # ;
++N+Fem+Sg+Abl+UnExt:%>ȭ # ;
++N+Fem+Sg+Loc+UnExt:%>ē # ;
++N+Fem+Pl+Dir+UnExt:%>ā̃ # ;
++N+Fem+Pl+Voc+UnExt:%>ō # ;
++N+Fem+Pl+Loc+UnExt:%>ī̃ # ;
+
+
+LEXICON ProperNameStems
+aadi+N+Sg:aadi # ;
+arth+N+Sg:arth # ;
+bare+N+Sg:bare # ;
+bumika+N+Sg:bumika # ;
+bumika+N+Pl:bumikawa # ;
+itahās+N+Sg/Pl:itahās # ;
+itahās+N+Sg/Pl+Past:itahāsik # ;
+haṛ+N+Sg+Past:haṛ # ;
+kise+N+Sg/Pl:kise # ;
+kodrat+N+Sg/Pl:kodrat # ;
+naā+N+Sg/Pl:naā # ;
+nadiā+N+Sg/Pl:nadiā # ;
+jaā+N+Sg/Pl:jaā # ;
+jīwn+N+Sg:jīwn # ;
+jivan+N+Sg:jīvan # ;
+jwāḷamakhī+N+Sg/Pl:jwāḷamakhī # ;
+laukasaāhaita+N+Sg/Pl:laukasaāhaita # ;
+site+N+Sg/Pl:site # ;
+rab+N+Sg/Pl:rab # ;
+devidevtē+N+Sg/Pl:devidevtē # ;
+kaaḷ+N+Sg/Pl: kaaḷ # ;
+anubhav+N+Sg/Pl:anubhav # ;
+pidhīdarpidhī+N+Sg/Pl:pidhīdarpidhī # ;
+jivandhang+N+Sg/Pl:jivandhang # ;
+ràgr+N+Sg/Pl:ràgr # ;
+rūp+N+Sg/Pl:rūp # ;
+shūrū+N+Sg:shūrū # ;
+shikār+N+Sg:shikār # ;
+wihmā+N+Sg:wihmā # ;
+vḍevḍeriā+N+Pl:vḍevḍeriā # ;
+yugā+N+Pl:yugā # ;
+
+LEXICON VerbStems
+aphadh VerbSuffixes ;
+aunde VerbSuffixes ;
+aundē VerbSuffixes ;
+dūjae VerbSuffixes ;
+hauī VerbSuffixes ;
+jaāndi VerbSuffixes ;
+likhī VerbSuffixes ;
+likhtī VerbSuffixes ;
+labhan VerbSuffixes ;
+laga VerbSuffixes ;
+krda VerbSuffixes ;
+gāḷ VerbSuffixes ;    
+mār VerbSuffixes ;
+push VerbSuffixes ;
+ràgr VerbSuffixes ;
+suṇaī VerbSuffixes ;	
+samaā VerbSuffixes ;
+shurū VerbSuffixes ;
+site VerbSuffixes ;
+sirj VerbSuffixes ;
+samajhdā VerbSuffixes ;
+sojhi VerbSuffixes ;
+tak VerbSuffixes ;
+wadaā VerbSuffixes ;
+
+LEXICON VerbSuffixes 
++V+1Sg+Pres:%>na # ;
++V+1Pl+Pres:%>iyan # ; 
++V+1Sg+Pcp1:%>yat # ;
+
+LEXICON VerbCopulas    !In Punjabi, there are two copulas: "he" for present tense and "sī" for past tense.
+ā+V+Pres+Cop:ā # ; 
+bārē+V+Cop:bārē # ; 
+dā̃+V+1Sg+Pres+Cop:dā̃ # ;
+dē+V+1Pl+Pres+Cop:dē # ;
+dsiā+V+Cop:dsiā # ;
+dsna+V+Cop:dsna # ;
+haai+V+1Sg+Pres+Cop:haai # ;
+hā̃+V+1Sg+Pres+Cop:hā̃ # ;
+hē̃+V+2Sg+Pres+Cop:hē̃ # ;
+hē+V+3Sg+Pres+Cop:hē # ; 
+hā̃+V+1Pl+Pres+Cop:hā̃ # ;
+hō+V+2Pl+Pres+Cop:hō # ;
+han+V+3Pl+Pres+Cop:han # ;
+haai+V+Cop:haai # ;
+haungē+V+Cop:haungē # ;
+hauṇā+V+Cop:hauṇā # ;
+hoyea+V+Cop:hoyea # ;
+jo+V+Cop:jo # ;
+jhā̃+V+Cop:jhā̃ # ;
+jaā+V+Cop:jaā # ;
+ih+V+Cop:ih # ;
+ik+V+Cop:ik # ;
+is+V+Cop:is # ;
+laai+V+Cop:laai # ;
+liā+V+Cop:liā # ;
+lgda+V+Cop:lgda # ;
+kathawā̃+V+Cop:kathawā̃ # ;
+kītā+V+Cop:kītā # ;
+nū̃+V+Cop:nū̃ # ;
+rahī+V+Cop:rahī # ;
+sā̃+V+1Sg+Past+Cop:sā̃ # ;
+sē̃+V+2Sg+Past+Cop:sē̃ # ;
+sī+V+3Sg+Past+Cop:sī # ;
+sā̃+V+1Pl+Past+Cop:sā̃ # ;
+sō+V+2Pl+Past+Cop:sō # ;
+san+V+3Pl+Past+Cop:san # ;
+saṛde+V+Cop:saṛde # ;
+site+V+Cop:site # ;
+sme+V+Cop:sme # ;
+phatdē+V+Cop:phatdē # ;
+pushanā+V+Cop:pushanā # ;
+vi+V+Cop:vi # ;
+
+LEXICON AdjectiveStems
+!Inflecting Adjectives
+āpnē AdjectiveSuffixes ;
+baṛaā AdjectiveSuffixes ;
+bahaut AdjectiveSuffixes ;
+chaliyan AdjectiveSuffixes ;
+dsiā AdjectiveSuffixes ;
+kītē AdjectiveSuffixes ;
+laai AdjectiveSuffixes ;
+laga AdjectiveSuffixes ;
+liā AdjectiveSuffixes ;
+likhtī AdjectiveSuffixes ;
+nvvi AdjectiveSuffixes ;
+nwiyiā̃ AdjectiveSuffixes ;
+sabh AdjectiveSuffixes ;
+sarrē AdjectiveSuffixes ;
+sadde AdjectiveSuffixes ;
+sanū AdjectiveSuffixes ;
+sirj AdjectiveSuffixes ;
+smjhan AdjectiveSuffixes ;
+puraṇe AdjectiveSuffixes ;
+rahaī AdjectiveSuffixes ;
+wadaā AdjectiveSuffixes ;
+
+!Non-Inflecting Adjectives
+arth+Adj:arth # ;
+hovēgā+Adj:hovēgā # ;
+fajhūl+Adj:fajhūl # ;
+is+Adj:is # ;
+ih+Adj:ih # ;
+ik+Adj:ik # ;
+jo+Adj:jo # ;
+kauī+Adj:kauī # ;
+kē+Adj:kē # ;
+kise+Adj:kise # ;
+kīsē+Adj:kīsē # ;
+lyē+Adj:lyē # ;
+nē+Adj:nē # ;
+nū̃+Adj:nū̃ # ;
+smajik+Adj:smajik # ;
+pta+Adj:pta # ;
+rūp+Adj:rūp # ;
+os+Adj:os # ;
+us+Adj:us # ;
+ū̃s+Adj:ū̃s # ;
+vēlē+Adj:vēlē # ;
+wjon+Adj:wjon # ;
+
+LEXICON AdjectiveSuffixes
++Adj+Masc+Sg+Dec+Dir:%> ā # ;
++Adj+Masc+Sg+Dec+Obl:%> ē # ;
++Adj+Masc+Sg+Dec+Voc:%> iā # ;	
++Adj+Masc+Sg+Dec+Abl:%> iȭ # ;
++Adj+Masc+Sg+Dec+Loc:%> ē # ;
++Adj+Masc+Pl+Dec+Dir:%> ē # ;
++Adj+Masc+Pl+Dec+Obl:%> iā̃ # ;
++Adj+Masc+Pl+Dec+Voc:%> iō # ;
+
++Adj+Fem+Sg+Dec+Dir/Obl:%> ī # ;
++Adj+Fem+Sg+Dec+Voc:%> īē # ;
++Adj+Fem+Pl+Dec+Dir/Obl:%> īā̃ # ;
++Adj+Fem+Pl+Dec+Voc:%> īō # ;
+
+LEXICON AdverbStems
+! Inflecting adverbs
+baṛaā AdverbSuffixes ;
+bārē AdverbSuffixes ;
+bahaut AdverbSuffixes ;
+chukkī AdverbSuffixes ;
+rahi AdverbSuffixes ;
+shūrū AdverbSuffixes ;
+vich AdverbSuffixes ;
+! Non-inflecting adverbs
+aadi+Adv:aadi # ;
+ajjē+Adv:ajjē # ;
+bārē+Adv:bārē # ;
+bārrē+Adv:bārrē # ;
+hun+Adv:hun # ;
+is+Adv:is # ;
+ih+Adv:ih # ;
+jaā̃+Adv:jaā̃ # ;
+jadauȭ+Adv:jadauȭ # ;
+ke+Adv:ke # ;
+kauī+Adv:kauī # ;
+haṛ+Adv:haṛ # ;
+mithihasīk+Adv:mithihasīk # ;
+nē+Adv:nē # ;
+naā+Adv:naā # ;
+nhi+Adv:nhi # ;
+sagȭ+Adv:sagȭ # ;
+shaāid+Adv:shaāid # ;
+site+Adv:site # ;
+pahailau+Adv:pahailau # ;
+pr+Adv:pr # ;
+tā̃+Adv:tā̃ # ;
+tak+Adv:tak # ;
+udȭ+Adv:udȭ # ;
+vadhū+Adv:vadhū # ;
+vich+Adv:vich # ;
+vichȭ+Adv:vichȭ # ;
+
+LEXICON AdverbSuffixes
++Adv+1Pl:%>iyan # ;
++Adv+Past:%>yat # ;
+
+LEXICON Pronouns
+! Personal pronouns
+!Pronouns do not distinguish gender
+mẽ+Pron+Pers+1Sg:mẽ # ;
+asī̃+Pron+Pers+Pl:asī̃ # ;
+tū̃+Pron+Pers+2Sg:tū̃ # ;
+tusī̃+Pron+Pers+2Pl:tusī̃ # ;
+
+āpnē+Pron+Pers+Dat+2Pl:āpnē # ;
+menū̃+Pron+Pers+Dat+1Sg:menū̃ # ;
+sānū̃+Pron+Pers+Dat+1Pl:sānū̃ # ;
+tenū̃+Pron+Pers+Dat+2Sg:tenū̃ # ;
+tuā́nū̃+Pron+Pers+Dat+2Pl:tuā́nū̃ # ;
+
+methȭ+Pron+Pers+Abl+1Sg:methȭ # ;
+sāthȭ+Pron+Pers+Abl+1Sg:sāthȭ # ;
+tethȭ+Pron+Pers+Abl+2Pl:tethȭ # ;
+tuā́thȭ+Pron+Pers+Abl+2Pl:tuā́thȭ # ;
+
+mērā+Pron+Pers+Gen+1Sg: mērā # ;
+sāḍā+Pron+Pers+Gen+1Pl: sāḍā # ;
+sadde+Pron+Pers+Gen+2Pl: sadde # ;
+tērā+Pron+Pers+Gen+2Sg: tērā # ;
+tuā́dā+Pron+Pers+Gen+2Pl: tuā́dā # ;
+
+ḗ+Pron+Pers+Obj+1Sg+Neu:ḗ # ;    
+ḗnā̃+Pron+Pers+Obj+1Sg+Neu:ḗnā̃ # ; 
+ṓ+Pron+Pers+Dir+3Pl+Neu:ṓ # ;  ! Multiple ambiguity
+ṓ+Pron+Pers+Dir+3Sg+Neu:ṓ # ;  ! Multiple ambiguity
+ṓ+Pron+Pers+Obj+3Pl+Neu:ṓ # ;   ! Multiple ambiguity
+ṓnā̃+Pron+Pers+Obj+3Pl:ṓnā̃ # ; 
+kauī+Pron+Pers+Dir+Interr+Pl+Neu:koṇ # ;
+koṇ+Pron+Pers+Dir+Interr+Sg+Neu:koṇ # ;
+kī+Pron+Pers+Obj+Interr+Sg+Neu:kī # ;
+
+!Derivative Pronouns
+kadȭ+Pron+Pers+time+Interr:kadȭ # ;
+jadȭ+Pron+Pers+time+Rel:jadȭ # ;
+huṇ+Pron+Pers+time+Dem:huṇ # ;
+ōdȭ+Pron+Pers+time+Dem:ōdȭ # ;
+
+kitthē+Pron+Pers+place+Interr:kitthē # ;
+jitthē+Pron+Pers+place+Rel:jitthē # ;
+ēthē+Pron+Pers+place+Dem:ēthē # ;
+ōthē+Pron+Pers+place+Dem:ōthē # ;
+
+kivē̃+Pron+Pers+manner+Interr:kivē̃ # ;
+jivē̃+Pron+Pers+manner+Rel:jivē̃ # ;
+ivē̃+Pron+Pers+manner+Dem:ivē̃ # ;
+uvē̃+Pron+Pers+manner+Dem:uvē̃ # ;
+
+kinnā+Pron+Pers+quantity+Interr:kinnā # ;
+jinnā+Pron+Pers+quantity+Rel:jinnā # ;
+innā+Pron+Pers+quantity+Dem:innā # ;
+unnā+Pron+Pers+quantity+Dem:unnā # ;
+
+kiḍḍā+Pron+Pers+size+Interr:kiḍḍā # ;
+jiḍḍā+Pron+Pers+size+Rel:jiḍḍā # ;
+eḍā+Pron+Pers+size+Dem:eḍā # ;
+oḍā+Pron+Pers+size+Dem:oḍā # ;
+
+LEXICON Postpositions
+bārē+Postp:bārē # ;
+binā̃+Postp:binā̃ # ;
+dā+Postp:dā # ;
+dē+Postp:dē # ;
+duāḷē+Postp:duāḷē # ;
+gabbē+Postp:gabbē # ;
+kōḷ+Postp:kōḷ # ;
+lāgē+Postp:lāgē # ;
+laī+Postp:laī # ;
+lyi+Postp:lyi # ;
+nāḷ+Postp:nāḷ # ;
+nē+Postp:nē # ;
+nēṛē+Postp:nēṛē # ;
+nū̃+Postp:nū̃ # ;
+uttē+Postp:uttē # ;
+vall+Postp:vall # ;
+vikhē+Postp:vikhē # ;
+takk+Postp:takk # ;
+tȭ+Postp:tȭ # ;
+tā+Postp:tā # ;
+tē+Postp:tē # ;
+vargā+Postp:vargā # ;
+vi+Postp:vi # ;
+vich+Postp:vich # ;
+vickār+Postp:vickār # ;
+vichon+Postp:vichon # ;
+
+LEXICON Conjunctions
+ki+Conj:ki # ;
+vi+COnj:vi # ;
+kyu+Conj:kyu # ;
+jaduȭ+Conj:jaduȭ # ;
+pr+Conj:pr # ;
+tā̃+Conj:tā̃ # ;
+tē+Conj:tē # ;
+tȭ+Conj:tȭ # ;
+
+LEXICON Punctuation
+%|+Punct:%| # ;
+%,+Punct:%, # ;
+%:+Punct:%: # ;
+%]+Punct:%] # ;
+%[+Punct:%[ # ;
+%"+Punct:%" # ;
+%;+Punct:%; # ;

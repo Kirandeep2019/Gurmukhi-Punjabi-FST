@@ -1,0 +1,24 @@
+! Basic rules for Punjabi ortho-morpho-phonology
+! To be composed with LEXC-based morphology
+! with: 'punjabi.fscript'
+
+regex [ a | ā | ī | e | i | o | u | ū | ai | au ] ;
+define Vowel;
+
+regex [ b | c | d | f | g | h | j | k | l | m | n | p | q | r | s | t | v | w | x | z ] ;
+define Consonant;
+
+
+regex i -> 0 || _ %> [ y a n ] ;
+define IDeletion;
+
+
+
+!!! Rules for guesser
+
+read lexc punjabi_lexc.lexc
+define Lexicon;
+read regex Lexicon.o.IDeletion;
+save stack punjabi_analyser.fst
+
+
